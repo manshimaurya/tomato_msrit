@@ -1,0 +1,75 @@
+tomato/
+├── services/
+│   ├── auth-service
+│   ├── user-service
+│   ├── food-service
+│   ├── cart-service
+│   ├── order-service
+│   ├── payment-service
+│
+├── frontend/
+├── admin/
+
+
+🔐 1. AUTH SERVICE
+
+👉 Handles login, signup, JWT
+
+auth-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── authController.js
+├── routes/
+│   └── authRoute.js
+├── models/
+│   └── userModel.js
+├── middleware/
+│   └── authMiddleware.js
+├── utils/
+│   └── generateToken.js
+├── .env
+├── server.js
+├── package.json
+
+👤 2. USER SERVICE
+
+👉 Handles profile, address
+
+user-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── userController.js
+├── routes/
+│   └── userRoute.js
+├── models/
+│   └── userModel.js
+├── middleware/
+│   └── authMiddleware.js
+├── .env
+├── server.js
+├── package.json
+
+
+🍔 3. FOOD SERVICE
+
+👉 Handles food items + images
+
+food-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── foodController.js
+├── routes/
+│   └── foodRoute.js
+├── models/
+│   └── foodModel.js
+├── middleware/
+│   └── uploadMiddleware.js
+├── uploads/              ← IMPORTANT (images)
+├── .env
+├── server.js
+├── package.json
+
+
