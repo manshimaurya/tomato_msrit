@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth-container
+          image: manshi05/auth-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4001
+          env:
+            - name: MONGO_URI
+              value: "mongodb+srv://mmaurya2003_db_user:xi3URCotDG36NThm@cluster0.osbahi6.mongodb.net/auth-db"
+            - name: JWT_SECRET
+              value: "asdfghytswdsds"
+            - name: PORT
+              value: "4001"
