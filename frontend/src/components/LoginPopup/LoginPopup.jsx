@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { AUTH_URL, setToken } = useContext(StoreContext);
+  const {url, setToken } = useContext(StoreContext);
   const [currentState, setCurrentState] = useState("Login");
   const [data, setData] = useState({
     name: "",
@@ -21,41 +21,23 @@ const LoginPopup = ({ setShowLogin }) => {
   };
 
   const onLogin = async (event) => {
-  event.preventDefault();
-
-  try {
-    let newUrl = AUTH_URL;
-
+    event.preventDefault();
+    let newUrl = url;
     if (currentState === "Login") {
-      newUrl += "/api/auth/login";
+      newUrl += "/api/user/login";
     } else {
-      newUrl += "/api/auth/register";
+      newUrl += "/api/user/register";
     }
-
-    console.log("Request URL:", newUrl); // debug
-
     const response = await axios.post(newUrl, data);
-
     if (response.data.success) {
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
-
-      toast.success(
-        currentState === "Login"
-          ? "Login Successfully"
-          : "Account Created"
-      );
-
+      toast.success("Login Successfully")
       setShowLogin(false);
-    } else {
+    }else{
       toast.error(response.data.message);
     }
-
-  } catch (error) {
-    console.log(error);
-    toast.error("Server error");
-  }
-};
+  };
   return (
     <div className="login-popup">
       <form onSubmit={onLogin} className="login-popup-container">
