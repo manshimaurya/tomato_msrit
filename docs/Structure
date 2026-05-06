@@ -3,12 +3,12 @@
 
 tomato/
 ├── services/
-│   ├── auth-service
-│   ├── user-service
-│   ├── food-service
-│   ├── cart-service
-│   ├── order-service
-│   ├── payment-service
+│   ├── auth-service  MM
+│   ├── user-service  AS
+│   ├── food-service  MM
+│   ├── cart-service  AK
+│   ├── order-service AK
+│   ├── payment-service AS
 │
 ├── frontend/
 ├── admin/
