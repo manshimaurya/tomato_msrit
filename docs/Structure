@@ -1,3 +1,6 @@
+🧩 Overall Structure
+
+
 tomato/
 ├── services/
 │   ├── auth-service
@@ -71,5 +74,63 @@ food-service/
 ├── .env
 ├── server.js
 ├── package.json
+
+🛒 4. CART SERVICE
+
+👉 Handles cart logic
+
+cart-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── cartController.js
+├── routes/
+│   └── cartRoute.js
+├── models/
+│   └── cartModel.js
+├── middleware/
+│   └── authMiddleware.js
+├── .env
+├── server.js
+├── package.json
+
+📦 5. ORDER SERVICE
+
+👉 Handles orders
+
+order-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── orderController.js
+├── routes/
+│   └── orderRoute.js
+├── models/
+│   └── orderModel.js
+├── middleware/
+│   └── authMiddleware.js
+├── .env
+├── server.js
+├── package.json
+
+💳 6. PAYMENT SERVICE
+
+👉 Handles payments (can be dummy initially)
+
+payment-service/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── paymentController.js
+├── routes/
+│   └── paymentRoute.js
+├── models/
+│   └── paymentModel.js
+├── middleware/
+│   └── authMiddleware.js
+├── .env
+├── server.js
+├── package.json
+
 
 
